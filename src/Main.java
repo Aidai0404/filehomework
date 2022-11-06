@@ -6,39 +6,27 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws IOException {
         FileWriter writer=new FileWriter("Alphabet.txt");
-        writer.write("Aa\n");
-        writer.write("Bb\n");
-        writer.write("Cc\n");
-        writer.write("Dd\n");
-        writer.write("Ee\n");
-        writer.write("Ff\n");
-        writer.write("Gg\n");
-        writer.write("Hh\n");
-        writer.write("Ii\n");
-        writer.write("Jj\n");
-        writer.write("Kk\n");
-        writer.write("Ll\n");
-        writer.write("Mm\n");
-        writer.write("Nn\n");
-        writer.write("Oo\n");
-        writer.write("Pp\n");
-        writer.write("Qq\n");
-        writer.write("Rr\n");
-        writer.write("Ss\n");
-        writer.write("Tt\n");
-        writer.write("Uu\n");
-        writer.write("Vv\n");
-        writer.write("Ww\n");
-        writer.write("Xx\n");
-        writer.write("Yy\n");
-        writer.write("Zz");
+        StringBuilder builder=new StringBuilder();
+        char c='a';
+        char d='z';
+        char f='A';
+        char v='Z';
+        while (c<=d && f<=v){
+           builder.append(f+""+c+"\n");
+           f++;
+            c++;
+        }
+       writer.write(String.valueOf(builder));
+        for (int i = 0; i <= 9; i++) {
+            writer.write(i+"\n");
+        }
         writer.close();
 
         FileReader reader=new FileReader("Alphabet.txt");
         Scanner sc=new Scanner(reader);
         int a=0;
-        int b=26;
-        while(a<b && sc.hasNext()){
+        int b=36;
+        while(a<=b && sc.hasNext()){
             a++;
             System.out.println(a+" "+sc.nextLine());
         }
